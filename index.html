@@ -1,71 +1,112 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Maltparser.net by sergey-tihon</title>
+    <title>MaltParser for .NET
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MaltParser is a system for data-driven dependency parsing, which can be used to induce a parsing model from treebank data and to parse new data using an induced model.">
+    <meta name="author" content="Sergey Tihon">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/MaltParser.NET/content/style.css" />
+    <script type="text/javascript" src="/MaltParser.NET/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Maltparser.net</h1>
-        <p>MaltParser is a system for data-driven dependency parsing, which can be used to induce a parsing model from treebank data and to parse new data using an induced model.</p>
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        <p class="view"><a href="https://github.com/sergey-tihon/MaltParser.NET">View the Project on GitHub <small>sergey-tihon/MaltParser.NET</small></a></p>
+    ga('create', 'UA-43389710-4', 'sergey-tihon.github.io');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="http://sergey-tihon.github.io/Stanford.NLP.NET/">Stanford.NLP.NET</a></li>
+                <li><a href="http://fsharp.org">fsharp.org</a></li>
+                <li><a href="https://github.com/sergey-tihon/MaltParser.NET">github page</a></li>
+            </ul>
+            <h3 class="muted"><a href="/MaltParser.NET/index.html">MaltParser.NET</a></h3>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="span9" id="main">
+                
+<h1>MaltParser for .NET</h1>
 
+<p><code>MaltParser</code> is a system for data-driven dependency parsing, which can be used to induce a parsing model from treebank 
+data and to parse new data using an induced model. <code>MaltParser</code> is developed by <code>Johan Hall</code>, <code>Jens Nilsson</code> and <code>Joakim Nivre</code> 
+at Växjö University and Uppsala University, Sweden.</p>
 
-        <ul>
-          <li><a href="https://github.com/sergey-tihon/MaltParser.NET/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/sergey-tihon/MaltParser.NET/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/sergey-tihon/MaltParser.NET">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<p><code>MaltParser</code> implements nine deterministic parsing algorithms:</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<ul>
+<li>Nivre arc-eager</li>
+<li>Nivre arc-standard</li>
+<li>Covington non-projective</li>
+<li>Covington projective</li>
+<li>Stack projective</li>
+<li>Stack swap-eager</li>
+<li>Stack swap-lazy</li>
+<li>Planar (implemented by <code>Carlos Gómez-Rodríguez</code>)</li>
+<li>2-planar (implemented by <code>Carlos Gómez-Rodríguez</code>)</li>
+</ul>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p><code>MaltParser</code> allows users to define feature models of arbitrary complexity.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p><code>MaltParser</code> currently includes two machine learning packages (thanks to <code>Sofia Cassel</code> for her work on LIBLINEAR):</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<ul>
+<li><code>LIBSVM</code> - A Library for Support Vector Machines (Chang, 2001).</li>
+<li><code>LIBLINEAR</code> -- A Library for Large Linear Classification (Fan et al., 2008).</li>
+</ul>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p><code>MaltParser</code> can also be turned into a phrase structure parser that recovers both continuous and discontinuous phrases 
+with both phrase labels and grammatical functions (Hall and Nivre, 2008a; Hall and Nivre, 2008b).</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/sergey-tihon">sergey-tihon</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<div class="row">
+  <div class="span1"></div>
+  <div class="span6">
+    <div class="well well-small" id="nuget">
+      The MaltParser for .NET library can be <a href="https://www.nuget.org/packages/MaltParser/">installed from NuGet</a>:
+      <pre>PM> Install-Package MaltParser</pre>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+  </div>
+  <div class="span1"></div>
+</div>
+
+
+            </div>
+            <div class="span3">
+                <img src="img/logo.jpg" alt="Stanford.NLP.NET" style="width: 111px; height: 112px; margin: 10px 0px 0px 20px; border-style: none;" />
+                <ul class="nav nav-list" id="menu">
+                    <li class="nav-header">MaltParser.NET</li>
+                    <li><a href="/MaltParser.NET/index.html">Home page</a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://www.nuget.org/packages/MaltParser/">Get Libraries via NuGet</a></li>
+                    <li><a href="https://github.com/sergey-tihon/MaltParser.NET">Source Code on GitHub</a></li>
+                    <li><a href="https://github.com/sergey-tihon/MaltParser.NET/blob/master/LICENSE.txt">License</a></li>
+                    <li><a href="https://github.com/sergey-tihon/MaltParser.NET/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+
+                    <li class="nav-header">Getting started</li>
+                    <li><a href="/MaltParser.NET/MaltParser.html">Parse sentences</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a href="https://github.com/sergey-tihon/MaltParser.NET"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+</body>
 </html>
