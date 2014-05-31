@@ -7,7 +7,7 @@
 MaltParser for .NET
 ===================
 
-`MaltParser` is a system for data-driven dependency parsing, which can be used to induce a parsing model from treebank 
+[MaltParser](http://www.maltparser.org/) is a system for data-driven dependency parsing, which can be used to induce a parsing model from treebank 
 data and to parse new data using an induced model. `MaltParser` is developed by `Johan Hall`, `Jens Nilsson` and `Joakim Nivre` 
 at Växjö University and Uppsala University, Sweden.
 
