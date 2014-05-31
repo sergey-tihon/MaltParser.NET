@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MaltParser</id>
+    <version>0.0.1</version>
+    <authors>@authors@</authors>
+    <owners>Sergey Tihon</owners>
+    <licenseUrl>https://github.com/sergey-tihon/MaltParser.NET/blob/master/LICENSE.txt</licenseUrl>
+    <iconUrl>http://sergey-tihon.github.io/MaltParser.NET/img/logo.jpg</iconUrl>
+    <projectUrl>http://sergey-tihon.github.io/MaltParser.NET/</projectUrl>
+    <description>@description@</description>
+    <tags>malt nlp parser POS Treebank</tags>
+    <dependencies>
+      <dependency id="IKVM" version="[7.4.5196]" />
+    </dependencies>
+  </metadata>
+</package>
