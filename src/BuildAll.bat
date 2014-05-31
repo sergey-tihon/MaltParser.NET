@@ -1,1 +1,1 @@
-for %%f in (Stanford*.fsx) do (Build.bat %%f)
+for %%f in (Malt*.fsx) do (Build.bat %%f)
