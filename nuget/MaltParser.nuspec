@@ -3,15 +3,15 @@
   <metadata>
     <id>MaltParser</id>
     <version>0.0.1</version>
-    <authors>@authors@</authors>
+    <authors>Johan Hall, Jens Nilsson, Joakim Nivre</authors>
     <owners>Sergey Tihon</owners>
     <licenseUrl>https://github.com/sergey-tihon/MaltParser.NET/blob/master/LICENSE.txt</licenseUrl>
     <iconUrl>http://sergey-tihon.github.io/MaltParser.NET/img/logo.jpg</iconUrl>
     <projectUrl>http://sergey-tihon.github.io/MaltParser.NET/</projectUrl>
-    <description>@description@</description>
+    <description>MaltParser is a system for data-driven dependency parsing, which can be used to induce a parsing model from treebank data and to parse new data using an induced model.</description>
     <tags>malt nlp parser POS Treebank</tags>
     <dependencies>
-      <dependency id="IKVM" version="[7.4.5196]" />
+      <dependency id="IKVM" version="[8.0.5449.1]" />
     </dependencies>
   </metadata>
 </package>

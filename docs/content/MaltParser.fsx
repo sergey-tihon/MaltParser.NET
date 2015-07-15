@@ -1,8 +1,8 @@
 ﻿(*** hide ***)
-// This block of code is omitted in the generated HTML documentation. Use 
+// This block of code is omitted in the generated HTML documentation. Use
 // it to define helpers that you do not want to show in the documentation.
-#I "../../bin"
-#I "../../src/temp/ikvm-7.4.5196.0/bin/"
+#I "../../bin/lib"
+#I "../../paket-files/www.frijters.net/ikvm-8.0.5449.1/bin/"
 
 (**
 Parse sentences with MaltParser
@@ -10,28 +10,25 @@ Parse sentences with MaltParser
 
 This example shows how to parse a sentence with MaltParser by first initialize a parser model.
 
-To run this example requires that you have created `swemalt-1.7.2i.mco`. 
+To run this example requires that you have created `swemalt-1.7.2i.mco`.
 
 You can download model from [pre-trainted models page](http://www.maltparser.org/mco/mco.html).
 
 *)
-#r "maltparser-1.8.dll"
+#r "maltparser-1.8.1.dll"
 #r "IKVM.OpenJDK.Core.dll"
 
 open java.io
-open java.net
-
 open org.maltparser.concurrent
-open org.maltparser.concurrent.graph
 
 // Loading the Swedish model swemalt-1.7.2
-let swemaltMiniModelURL = File(__SOURCE_DIRECTORY__ + "/../../bin/swemalt-1.7.2.mco").toURI().toURL()
+let swemaltMiniModelURL = File(__SOURCE_DIRECTORY__ + "/../../paket-files/www.maltparser.org/swemalt-1.7.2.mco").toURI().toURL()
 let model = ConcurrentMaltParserService.initializeParserModel(swemaltMiniModelURL)
 
-// Creates an array of tokens, which contains the Swedish sentence 
+// Creates an array of tokens, which contains the Swedish sentence
 // 'Samtidigt får du högsta sparränta plus en skattefri sparpremie.'
 // in the CoNLL data format.
-let tokens = 
+let tokens =
   [|"1\tSamtidigt\t_\tAB\tAB\t_"
     "2\tfår\t_\tVB\tVB\tPRS|AKT"
     "3\tdu\t_\tPN\tPN\tUTR|SIN|DEF|SUB"
