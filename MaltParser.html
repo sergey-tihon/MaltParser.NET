@@ -53,8 +53,7 @@
 
 <p>You can download model from <a href="http://www.maltparser.org/mco/mco.html">pre-trainted models page</a>.</p>
 
-<table class="pre"><tr><td class="lines"><pre class="fssnip">
-<span class="l"> 1: </span>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
 <span class="l"> 4: </span>
@@ -92,42 +91,34 @@
 <span class="l">36: </span>
 <span class="l">37: </span>
 <span class="l">38: </span>
-<span class="l">39: </span>
-<span class="l">40: </span>
-<span class="l">41: </span>
-</pre>
-</td>
-<td class="snippet"><pre class="fssnip">
-<span class="prep">#r</span> <span class="s">&quot;</span><span class="s">maltparser</span><span class="s">-</span><span class="s">1</span><span class="s">.</span><span class="s">8</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>
-<span class="prep">#r</span> <span class="s">&quot;</span><span class="s">IKVM</span><span class="s">.</span><span class="s">OpenJDK</span><span class="s">.</span><span class="s">Core</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="prep">#r</span> <span class="s">&quot;maltparser-1.8.1.dll&quot;</span>
+<span class="prep">#r</span> <span class="s">&quot;IKVM.OpenJDK.Core.dll&quot;</span>
 
 <span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">java</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">io</span>
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">java</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="i">net</span>
-
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="i">org</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 6)" onmouseover="showTip(event, 'fs5', 6)" class="i">maltparser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs6', 7)" onmouseover="showTip(event, 'fs6', 7)" class="i">concurrent</span>
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs4', 8)" onmouseover="showTip(event, 'fs4', 8)" class="i">org</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="i">maltparser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs6', 10)" onmouseover="showTip(event, 'fs6', 10)" class="i">concurrent</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 11)" onmouseover="showTip(event, 'fs7', 11)" class="i">graph</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">org</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">maltparser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="i">concurrent</span>
 
 <span class="c">// Loading the Swedish model swemalt-1.7.2</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 12)" onmouseover="showTip(event, 'fs8', 12)" class="i">swemaltMiniModelURL</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs9', 13)" onmouseover="showTip(event, 'fs9', 13)" class="i">File</span>(<span class="k">__SOURCE_DIRECTORY__</span> <span class="o">+</span> <span class="s">&quot;</span><span class="s">/</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">bin</span><span class="s">/</span><span class="s">swemalt</span><span class="s">-</span><span class="s">1</span><span class="s">.</span><span class="s">7</span><span class="s">.</span><span class="s">2</span><span class="s">.</span><span class="s">mco</span><span class="s">&quot;</span>)<span class="o">.</span><span class="i">toURI</span>()<span class="o">.</span><span class="i">toURL</span>()
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs10', 14)" onmouseover="showTip(event, 'fs10', 14)" class="i">model</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs11', 15)" onmouseover="showTip(event, 'fs11', 15)" class="i">ConcurrentMaltParserService</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs12', 16)" onmouseover="showTip(event, 'fs12', 16)" class="i">initializeParserModel</span>(<span onmouseout="hideTip(event, 'fs8', 17)" onmouseover="showTip(event, 'fs8', 17)" class="i">swemaltMiniModelURL</span>)
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="i">swemaltMiniModelURL</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="t">File</span>(<span class="k">__SOURCE_DIRECTORY__</span> <span class="o">+</span> <span class="s">&quot;/../../paket-files/www.maltparser.org/swemalt-1.7.2.mco&quot;</span>)<span class="o">.</span><span class="f">toURI</span>()<span class="o">.</span><span class="f">toURL</span>()
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="i">model</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="t">ConcurrentMaltParserService</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs10', 10)" onmouseover="showTip(event, 'fs10', 10)" class="f">initializeParserModel</span>(<span onmouseout="hideTip(event, 'fs6', 11)" onmouseover="showTip(event, 'fs6', 11)" class="i">swemaltMiniModelURL</span>)
 
-<span class="c">// Creates an array of tokens, which contains the Swedish sentence </span>
+<span class="c">// Creates an array of tokens, which contains the Swedish sentence</span>
 <span class="c">// &#39;Samtidigt f&#229;r du h&#246;gsta sparr&#228;nta plus en skattefri sparpremie.&#39;</span>
 <span class="c">// in the CoNLL data format.</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs13', 18)" onmouseover="showTip(event, 'fs13', 18)" class="i">tokens</span> <span class="o">=</span> 
-  [|<span class="s">&quot;</span><span class="s">1</span><span class="s">\t</span><span class="s">Samtidigt</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">AB</span><span class="s">\t</span><span class="s">AB</span><span class="s">\t</span><span class="s">_</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">2</span><span class="s">\t</span><span class="s">f&#229;r</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">VB</span><span class="s">\t</span><span class="s">VB</span><span class="s">\t</span><span class="s">PRS</span><span class="s">|</span><span class="s">AKT</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">3</span><span class="s">\t</span><span class="s">du</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">PN</span><span class="s">\t</span><span class="s">PN</span><span class="s">\t</span><span class="s">UTR</span><span class="s">|</span><span class="s">SIN</span><span class="s">|</span><span class="s">DEF</span><span class="s">|</span><span class="s">SUB</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">4</span><span class="s">\t</span><span class="s">h&#246;gsta</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">JJ</span><span class="s">\t</span><span class="s">JJ</span><span class="s">\t</span><span class="s">SUV</span><span class="s">|</span><span class="s">UTR</span><span class="s">/</span><span class="s">NEU</span><span class="s">|</span><span class="s">SIN</span><span class="s">/</span><span class="s">PLU</span><span class="s">|</span><span class="s">DEF</span><span class="s">|</span><span class="s">NOM</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">5</span><span class="s">\t</span><span class="s">sparr&#228;nta</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">NN</span><span class="s">\t</span><span class="s">NN</span><span class="s">\t</span><span class="s">UTR</span><span class="s">|</span><span class="s">SIN</span><span class="s">|</span><span class="s">IND</span><span class="s">|</span><span class="s">NOM</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">6</span><span class="s">\t</span><span class="s">plus</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">AB</span><span class="s">\t</span><span class="s">AB</span><span class="s">\t</span><span class="s">_</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">7</span><span class="s">\t</span><span class="s">en</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">DT</span><span class="s">\t</span><span class="s">DT</span><span class="s">\t</span><span class="s">UTR</span><span class="s">|</span><span class="s">SIN</span><span class="s">|</span><span class="s">IND</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">8</span><span class="s">\t</span><span class="s">skattefri</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">JJ</span><span class="s">\t</span><span class="s">JJ</span><span class="s">\t</span><span class="s">POS</span><span class="s">|</span><span class="s">UTR</span><span class="s">|</span><span class="s">SIN</span><span class="s">|</span><span class="s">IND</span><span class="s">|</span><span class="s">NOM</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">9</span><span class="s">\t</span><span class="s">sparpremie</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">NN</span><span class="s">\t</span><span class="s">NN</span><span class="s">\t</span><span class="s">UTR</span><span class="s">|</span><span class="s">SIN</span><span class="s">|</span><span class="s">IND</span><span class="s">|</span><span class="s">NOM</span><span class="s">&quot;</span>
-    <span class="s">&quot;</span><span class="s">10</span><span class="s">\t</span><span class="s">.</span><span class="s">\t</span><span class="s">_</span><span class="s">\t</span><span class="s">MAD</span><span class="s">\t</span><span class="s">MAD</span><span class="s">\t</span><span class="s">_</span><span class="s">&quot;</span>|]
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs11', 12)" onmouseover="showTip(event, 'fs11', 12)" class="i">tokens</span> <span class="o">=</span>
+  [|<span class="s">&quot;1</span><span class="e">\t</span><span class="s">Samtidigt</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">AB</span><span class="e">\t</span><span class="s">AB</span><span class="e">\t</span><span class="s">_&quot;</span>
+    <span class="s">&quot;2</span><span class="e">\t</span><span class="s">f&#229;r</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">VB</span><span class="e">\t</span><span class="s">VB</span><span class="e">\t</span><span class="s">PRS|AKT&quot;</span>
+    <span class="s">&quot;3</span><span class="e">\t</span><span class="s">du</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">PN</span><span class="e">\t</span><span class="s">PN</span><span class="e">\t</span><span class="s">UTR|SIN|DEF|SUB&quot;</span>
+    <span class="s">&quot;4</span><span class="e">\t</span><span class="s">h&#246;gsta</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">JJ</span><span class="e">\t</span><span class="s">JJ</span><span class="e">\t</span><span class="s">SUV|UTR/NEU|SIN/PLU|DEF|NOM&quot;</span>
+    <span class="s">&quot;5</span><span class="e">\t</span><span class="s">sparr&#228;nta</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">NN</span><span class="e">\t</span><span class="s">NN</span><span class="e">\t</span><span class="s">UTR|SIN|IND|NOM&quot;</span>
+    <span class="s">&quot;6</span><span class="e">\t</span><span class="s">plus</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">AB</span><span class="e">\t</span><span class="s">AB</span><span class="e">\t</span><span class="s">_&quot;</span>
+    <span class="s">&quot;7</span><span class="e">\t</span><span class="s">en</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">DT</span><span class="e">\t</span><span class="s">DT</span><span class="e">\t</span><span class="s">UTR|SIN|IND&quot;</span>
+    <span class="s">&quot;8</span><span class="e">\t</span><span class="s">skattefri</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">JJ</span><span class="e">\t</span><span class="s">JJ</span><span class="e">\t</span><span class="s">POS|UTR|SIN|IND|NOM&quot;</span>
+    <span class="s">&quot;9</span><span class="e">\t</span><span class="s">sparpremie</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">NN</span><span class="e">\t</span><span class="s">NN</span><span class="e">\t</span><span class="s">UTR|SIN|IND|NOM&quot;</span>
+    <span class="s">&quot;10</span><span class="e">\t</span><span class="s">.</span><span class="e">\t</span><span class="s">_</span><span class="e">\t</span><span class="s">MAD</span><span class="e">\t</span><span class="s">MAD</span><span class="e">\t</span><span class="s">_&quot;</span>|]
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs14', 19)" onmouseover="showTip(event, 'fs14', 19)" class="i">outputGraph</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs10', 20)" onmouseover="showTip(event, 'fs10', 20)" class="i">model</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs15', 21)" onmouseover="showTip(event, 'fs15', 21)" class="i">parse</span>(<span onmouseout="hideTip(event, 'fs13', 22)" onmouseover="showTip(event, 'fs13', 22)" class="i">tokens</span>)
-<span onmouseout="hideTip(event, 'fs16', 23)" onmouseover="showTip(event, 'fs16', 23)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">%</span><span class="s">A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs14', 24)" onmouseover="showTip(event, 'fs14', 24)" class="i">outputGraph</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs12', 13)" onmouseover="showTip(event, 'fs12', 13)" class="i">outputGraph</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 14)" onmouseover="showTip(event, 'fs8', 14)" class="i">model</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 15)" onmouseover="showTip(event, 'fs13', 15)" class="f">parse</span>(<span onmouseout="hideTip(event, 'fs11', 16)" onmouseover="showTip(event, 'fs11', 16)" class="i">tokens</span>)
+<span onmouseout="hideTip(event, 'fs14', 17)" onmouseover="showTip(event, 'fs14', 17)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%A</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs12', 18)" onmouseover="showTip(event, 'fs12', 18)" class="i">outputGraph</span>
 
 <span class="fsi">1	Samtidigt	_	AB	AB	_	2	TA	_	_</span>
 <span class="fsi">2	f&#229;r	_	VB	VB	PRS|AKT	0	ROOT	_	_</span>
@@ -138,27 +129,25 @@
 <span class="fsi">7	en	_	DT	DT	UTR|SIN|IND	9	DT	_	_</span>
 <span class="fsi">8	skattefri	_	JJ	JJ	POS|UTR|SIN|IND|NOM	9	AT	_	_</span>
 <span class="fsi">9	sparpremie	_	NN	NN	UTR|SIN|IND|NOM	6	PA	_	_</span>
-<span class="fsi">10	.	_	MAD	MAD	_	2	IP	_	_</span></pre>
-</td>
+<span class="fsi">10	.	_	MAD	MAD	_	2	IP	_	_</span>
+</code></pre></td>
 </tr>
 </table>
 
 <div class="tip" id="fs1">namespace java</div>
 <div class="tip" id="fs2">namespace java.io</div>
-<div class="tip" id="fs3">namespace java.net</div>
-<div class="tip" id="fs4">namespace org</div>
-<div class="tip" id="fs5">namespace org.maltparser</div>
-<div class="tip" id="fs6">namespace org.maltparser.concurrent</div>
-<div class="tip" id="fs7">namespace org.maltparser.concurrent.graph</div>
-<div class="tip" id="fs8">val swemaltMiniModelURL : URL<br /><br />Full name: MaltParser.swemaltMiniModelURL</div>
-<div class="tip" id="fs9">Multiple items<br />type File =<br />&#160;&#160;new : pathname:string -&gt; File + 3 overloads<br />&#160;&#160;member canExecute : unit -&gt; bool<br />&#160;&#160;member canRead : unit -&gt; bool<br />&#160;&#160;member canWrite : unit -&gt; bool<br />&#160;&#160;member compareTo : pathname:File -&gt; int + 1 overload<br />&#160;&#160;member createNewFile : unit -&gt; bool<br />&#160;&#160;member delete : unit -&gt; bool<br />&#160;&#160;member deleteOnExit : unit -&gt; unit<br />&#160;&#160;member equals : obj:obj -&gt; bool<br />&#160;&#160;member exists : unit -&gt; bool<br />&#160;&#160;...<br /><br />Full name: java.io.File<br /><br />--------------------<br />File(pathname: string) : unit<br />File(uri: URI) : unit<br />File(parent: string, child: string) : unit<br />File(parent: File, child: string) : unit</div>
-<div class="tip" id="fs10">val model : ConcurrentMaltParserModel<br /><br />Full name: MaltParser.model</div>
-<div class="tip" id="fs11">Multiple items<br />type ConcurrentMaltParserService =<br />&#160;&#160;new : unit -&gt; ConcurrentMaltParserService<br />&#160;&#160;static member initializeParserModel : mcoURL:URL -&gt; ConcurrentMaltParserModel + 1 overload<br /><br />Full name: org.maltparser.concurrent.ConcurrentMaltParserService<br /><br />--------------------<br />ConcurrentMaltParserService() : unit</div>
-<div class="tip" id="fs12">ConcurrentMaltParserService.initializeParserModel(mcoFile: File) : ConcurrentMaltParserModel<br />ConcurrentMaltParserService.initializeParserModel(mcoURL: URL) : ConcurrentMaltParserModel</div>
-<div class="tip" id="fs13">val tokens : string []<br /><br />Full name: MaltParser.tokens</div>
-<div class="tip" id="fs14">val outputGraph : ConcurrentDependencyGraph<br /><br />Full name: MaltParser.outputGraph</div>
-<div class="tip" id="fs15">ConcurrentMaltParserModel.parse(tokens: string []) : ConcurrentDependencyGraph</div>
-<div class="tip" id="fs16">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
+<div class="tip" id="fs3">namespace org</div>
+<div class="tip" id="fs4">namespace org.maltparser</div>
+<div class="tip" id="fs5">namespace org.maltparser.concurrent</div>
+<div class="tip" id="fs6">val swemaltMiniModelURL : java.net.URL<br /><br />Full name: MaltParser.swemaltMiniModelURL</div>
+<div class="tip" id="fs7">Multiple items<br />type File =<br />&#160;&#160;new : pathname:string -&gt; File + 3 overloads<br />&#160;&#160;member canExecute : unit -&gt; bool<br />&#160;&#160;member canRead : unit -&gt; bool<br />&#160;&#160;member canWrite : unit -&gt; bool<br />&#160;&#160;member compareTo : pathname:File -&gt; int + 1 overload<br />&#160;&#160;member createNewFile : unit -&gt; bool<br />&#160;&#160;member delete : unit -&gt; bool<br />&#160;&#160;member deleteOnExit : unit -&gt; unit<br />&#160;&#160;member equals : obj:obj -&gt; bool<br />&#160;&#160;member exists : unit -&gt; bool<br />&#160;&#160;...<br /><br />Full name: java.io.File<br /><br />--------------------<br />File(pathname: string) : unit<br />File(uri: java.net.URI) : unit<br />File(parent: string, child: string) : unit<br />File(parent: File, child: string) : unit</div>
+<div class="tip" id="fs8">val model : ConcurrentMaltParserModel<br /><br />Full name: MaltParser.model</div>
+<div class="tip" id="fs9">Multiple items<br />type ConcurrentMaltParserService =<br />&#160;&#160;new : unit -&gt; ConcurrentMaltParserService<br />&#160;&#160;static member initializeParserModel : mcoURL:URL -&gt; ConcurrentMaltParserModel + 1 overload<br /><br />Full name: org.maltparser.concurrent.ConcurrentMaltParserService<br /><br />--------------------<br />ConcurrentMaltParserService() : unit</div>
+<div class="tip" id="fs10">ConcurrentMaltParserService.initializeParserModel(mcoFile: File) : ConcurrentMaltParserModel<br />ConcurrentMaltParserService.initializeParserModel(mcoURL: java.net.URL) : ConcurrentMaltParserModel</div>
+<div class="tip" id="fs11">val tokens : string []<br /><br />Full name: MaltParser.tokens</div>
+<div class="tip" id="fs12">val outputGraph : graph.ConcurrentDependencyGraph<br /><br />Full name: MaltParser.outputGraph</div>
+<div class="tip" id="fs13">ConcurrentMaltParserModel.parse(tokens: string []) : graph.ConcurrentDependencyGraph</div>
+<div class="tip" id="fs14">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
 
             </div>
             <div class="span3">
