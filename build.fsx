@@ -146,13 +146,13 @@ Target "CleanDocs" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Compile Stanford.NLP.CoreNLP and build NuGet package
 
-type maltParserDir = root.``paket-files``.``www.maltparser.org``.``maltparser-1.8.1``
+type maltParserDir = root.``paket-files``.``www.maltparser.org``.``maltparser-1.9.0``
 
 Target "Compile" (fun _ ->
     let ikvmDir  = @"bin\lib"
     CreateDir ikvmDir
 
-    [IKVMcTask( maltParserDir.``maltparser-1.8.1.jar``, Version=release.AssemblyVersion,
+    [IKVMcTask( maltParserDir.``maltparser-1.9.0.jar``, Version=release.AssemblyVersion,
         Dependencies =
             [IKVMcTask(maltParserDir.lib.``liblinear-1.8.jar``, Version="1.8")
              IKVMcTask(maltParserDir.lib.``libsvm.jar``, Version=release.AssemblyVersion)
